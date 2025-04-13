@@ -1,0 +1,155 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="description" content="Calculadora de horas y pagos para servicios profesionales">
+    <meta name="keywords" content="calculadora, horas, servicios, pago, freelance">
+    <link rel="canonical" href="https://yourwebsite.com/index.html">
+    <link rel="manifest" href="manifest.json">
+    <title>Calculadora de Horas y Pago</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "moment": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+            }
+        }
+    </script>
+    <!-- Add touch-icon for Android -->
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:title" content="Calculadora de Horas y Pago">
+    <meta property="og:description" content="Herramienta profesional para calcular horas de trabajo y pagos">
+    <meta property="og:image" content="https://yourwebsite.com/preview-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourwebsite.com/">
+    <meta name="twitter:title" content="Calculadora de Horas y Pago">
+    <meta name="twitter:description" content="Herramienta profesional para calcular horas de trabajo y pagos">
+    <meta name="twitter:image" content="https://yourwebsite.com/preview-image.jpg">
+</head>
+
+<body>
+    <!-- AdSense Header Ad -->
+    <div id="header-ad" style="text-align: center; margin-bottom: 10px;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:320px;height:50px"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="container">
+        
+        <div class="calculator">
+            <button id="donationsButton">
+                <span class="dollar-sign">$</span>
+            </button>
+            <h1><u>Tu Balance</u></h1>
+
+            <div class="totals">
+                <p>Total Horas: <span id="totalHours">0</span></p>
+                <p>Total Ganado: <span id="totalEarned">0</span></p>
+            </div>
+
+            <div class="input-grid">
+                <div class="input-group full-width">
+                    <label for="date">Fecha de servicio:</label>
+                    <input type="date" id="date">
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="serviceName">Nombre de servicio:</label>
+                    <input type="text" id="serviceName">
+                </div>
+
+                <div class="input-group">
+                    <label for="serviceType">Tipo de servicio:</label>
+                    <select id="serviceType">
+                        <option value="">Seleccionar tipo de servicio</option>
+                        <option value="Publico ordinario">Publico ordinario</option>
+                        <option value="Publico extraordinario">Publico extraordinario</option>
+                        <option value="Privado extraordinario">Privado extraordinario</option>
+                        <option value="Privado ordinario">Privado ordinario</option>
+                        <option value="Extras">Extras</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="hoursWorked">Total horas:</label>
+                    <input type="number" id="hoursWorked" value="8" min="0">
+                </div>
+            </div>
+
+            <div class="result">
+                <p id="totalTotalPay">Total: <span>$0.00</span></p>
+            </div>
+
+            <div class="button-group">
+            </div>
+
+             <div class="additional-prices">
+                <h2>Precios Adicionales</h2>
+                <table id="additionalPricesTable">
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Publico ordinario</td>
+                            <td><input type="number" value="50" class="price-input" data-description="Publico ordinario"></td>
+                        </tr>
+                        <tr>
+                            <td>Publico extraordinario</td>
+                            <td><input type="number" value="75" class="price-input" data-description="Publico extraordinario"></td>
+                        </tr>
+                        <tr>
+                            <td>Privado extraordinario</td>
+                            <td><input type="number" value="100" class="price-input" data-description="Privado extraordinario"></td>
+                        </tr>
+                        <tr>
+                            <td>Privado ordinario</td>
+                            <td><input type="number" value="120" class="price-input" data-description="Privado ordinario"></td>
+                        </tr>
+                        <tr>
+                            <td>Extras</td>
+                            <td><input type="number" value="30" class="price-input" data-description="Extras"></td>
+                        </tr>
+                        <tr>
+                            <td>Otros</td>
+                            <td><input type="number" value="40" class="price-input" data-description="Otros"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- AdSense Footer Ad -->
+    <div id="footer-ad" style="text-align: center; margin-top: 10px;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:320px;height:50px"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
