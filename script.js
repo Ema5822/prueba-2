@@ -143,6 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttonGroup = document.querySelector('.button-group');
     buttonGroup.appendChild(saveButton);
 
+    const viewDetailsButton = document.getElementById('viewDetailsButton');
+    viewDetailsButton.addEventListener('click', () => {
+        window.location.href = 'details.html';
+    });
+
     // Donations Button Functionality
     const donationsButton = document.getElementById('donationsButton');
     donationsButton.addEventListener('click', () => {
@@ -309,6 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
         saveButton, 
         lockButton, 
         donationsButton, 
+        viewDetailsButton,
         ...document.querySelectorAll('.delete-btn')
     ];
 

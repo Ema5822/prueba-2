@@ -8,25 +8,7 @@ body {
     min-height: 100vh;
     color: white;
     line-height: 1.6;
-    touch-action: manipulation; /* Prevent double-tap zoom */
-    padding-top: 60px; /* Space for header ad */
-    padding-bottom: 60px; /* Space for footer ad */
-}
-
-#header-ad, #footer-ad {
-    position: fixed;
-    left: 0;
-    right: 0;
-    background: rgba(255,255,255,0.1);
-    z-index: 1000;
-}
-
-#header-ad {
-    top: 0;
-}
-
-#footer-ad {
-    bottom: 0;
+    touch-action: manipulation; /* Prevent double-tap zoom and scrolling */
 }
 
 .container {
@@ -37,8 +19,9 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     width: 100%; /* Full width on mobile */
     max-width: 350px;  
-    margin: 70px 10px;
+    margin: 10px;
     transition: all 0.3s ease;  
+    overflow: hidden; /* Prevent content from overflowing */
 }
 
 .container:hover {
@@ -88,8 +71,25 @@ body {
 .input-grid select {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
-    font-size: 16px;
+}
+
+input, select {
+    font-size: 16px; /* Prevents auto zoom on iOS */
+    padding: 8px;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    max-width: 100%; /* Prevent overflow */
+    border: 1px solid #34495e;
+    border-radius: 8px;
+    background-color: rgba(52, 73, 94, 0.6);
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 0.8em;  
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 12px rgba(52, 152, 219, 0.4);
 }
 
 label {
@@ -111,24 +111,8 @@ button, input, select {
     touch-action: manipulation;
 }
 
-input, select, textarea {
+textarea {
     font-size: 16px; /* Prevents auto zoom on iOS */
-}
-
-input, select {
-    padding: 5px;  
-    border: 1px solid #34495e;
-    border-radius: 8px;
-    background-color: rgba(52, 73, 94, 0.6);
-    color: white;
-    transition: all 0.3s ease;
-    font-size: 0.8em;  
-}
-
-input:focus, select:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 12px rgba(52, 152, 219, 0.4);
 }
 
 .additional-prices {
@@ -188,7 +172,6 @@ button:hover {
     transform: rotate(360deg) scale(1.1);
 }
 
-/* New styles for delete button */
 .delete-btn {
     background: none;
     border: none;
@@ -207,18 +190,19 @@ button:hover {
 #details {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
-    font-size: 0.8em;  
+    margin-top: 10px;  
+    font-size: 0.7em;  
 }
 
 #details th, #details td {
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 6px;
+    padding: 4px;  
     text-align: left;
 }
 
 #details thead {
     background-color: rgba(52, 152, 219, 0.3);
+    font-size: 0.8em;  
 }
 
 #details tr:nth-child(even) {
@@ -262,7 +246,18 @@ button:hover {
     }
 }
 
-/* Prevent text selection interference */
+/* Media query for input font size */
+@media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+/* Prevent text selection and zooming */
 * {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -271,16 +266,19 @@ button:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    touch-action: manipulation;
 }
 
 /* Allow text input selection */
 input[type="text"], 
 input[type="number"], 
 input[type="date"], 
-textarea {
+textarea, 
+select {
     -webkit-user-select: text;
     -khtml-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
+    touch-action: pan-y; /* Allow vertical scrolling only */
 }
